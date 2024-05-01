@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    /* Chrome, Safari */
+    display: none;
+  }
+}
+
+body {
+  color: rgba(var(--foreground-rgb), 1.0);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  );
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("/images/bg.webp");
+    background-position: center;
+    background-size: cover;
+    z-index: -20;
+  }
+  .tri {
+    /* tooltip arrow. color:"bg-gray-700" */
+    background: linear-gradient(45deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 50%, rgb(55 65 81 / 0.5) 50%, rgb(55 65 81 / 0.5) 100%);
+  }
+  .git-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.front, .back {
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 1.2s;
+  width: 100%;
+  height: 100%;
+}
+.front {
+  background: linear-gradient(to top left, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+}
+.back-above {
+  .front {
+    transform: rotatey(180deg);
+  }
+  .back {
+    transform: rotatey(0deg);
+  }
+  &.reverse-x {
+    .back {
+      transform: rotatey(0deg) rotate(180deg);
+    }
+  }
+}
+/*  enterTo={reverse ? 'back-above' : ''}> */
+.front-by-hover {
+  &:hover {
+    .front {
+      transform: rotatey(0deg);
+    }
+    .back {
+      transform: rotatey(180deg);
+    }
+  }
+}
+.back {
+  transform: rotatey(180deg);
+  background: linear-gradient(to top left, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url("/images/cardback.png");
+    background-size: contain;
+  }
+
+}
+
+@keyframes smooth {
+  from {opacity: .1;}
+  to {opacity: 1;}
+}
+
+.crown {
+  position: relative;
+  padding: 0.2em 0.1em 0px 2em;
+  color: #dbb400;
+}
+.crown::before,
+.crown::after {
+  position: absolute;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  content: "";
+}
+.crown::before {
+  top: -1.25em;
+  border: 1em solid transparent;
+  border-bottom: 1.5em solid currentColor;
+}
+.crown::after {
+  top: 0.25em;
+  border: 0.5em solid transparent;
+  border-left: 1em solid currentColor;
+  border-right: 1em solid currentColor;
+}

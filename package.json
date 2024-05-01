@@ -1,0 +1,48 @@
+{
+  "name": "AirPoker",
+  "version": "2.0.0",
+  "license": "MIT",
+  "author": "darai0512",
+  "private": true,
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest"
+  },
+  "types": "src/index.d.ts",
+  "dependencies": {
+    "flowbite-react": "^0.7.5",
+    "mongodb": "^6.5.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intl": "latest"
+  },
+  "devDependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@testing-library/react": "^14.2.1",
+    "@types/node": "^20.11.24",
+    "@types/peerjs": "^1.1.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "jsdom": "^24.0.0",
+    "postcss": "^8",
+    "sass": "^1.72.0",
+    "tailwindcss": "^3.3.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "typescript": "^5",
+    "vitest": "^1.2.2"
+  }
+}
