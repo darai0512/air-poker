@@ -165,6 +165,13 @@ const rule = {
     </TimelineContent>
   </TimelineItem>
 </Timeline>
+<div className="flex justify-center items-center">
+  <iframe width="315" height="560"
+          src="https://www.youtube.com/embed/14ZnOYgZJ8U"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  ></iframe>
+</div>
 </div>),
   en: (<div className="max-h-[85vh] overflow-y-auto scrollbar-none px-2">
     <div className="italic text-center items-center">
@@ -314,6 +321,13 @@ const rule = {
         </TimelineContent>
       </TimelineItem>
     </Timeline>
+    <div className="flex justify-center items-center">
+      <iframe width="315" height="560"
+              src="https://www.youtube.com/embed/14ZnOYgZJ8U"
+              title="AirPoker screen explanation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>
+    </div>
   </div>)
 }
 
